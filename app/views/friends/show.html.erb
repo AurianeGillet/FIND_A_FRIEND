@@ -1,0 +1,14 @@
+<%= @friend.first_name %> <%= @friend.last_name %> <br>
+<p><%= @friend.age %> years old</p>
+<p><%= @friend.price%>€</p>
+<%= cl_image_tag @friend.photo.key, height: 300, width: 400, crop: :fill %> <br> <br>
+
+<p><%= @friend.category %></p>
+<p><%= @friend.description %></p> <br>
+
+<%= link_to "Delete",
+  friend_path(@friend),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%> <br>
+    <br>
+<%= link_to "<-Back", friends_path %>
