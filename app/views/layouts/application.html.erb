@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>FINDAFriend</title>
+    <title>FIND A FRIEND</title>
+    <link rel="shortcut icon" href="data:image/x-icon;" type="image/x-icon">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,7 +13,12 @@
   </head>
 
   <body>
+    <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
-    <%= yield %>
+    <div class="page-content">
+      <%= yield %>
+    </div>
+    <%= render "shared/footer" %>
+
   </body>
 </html>
