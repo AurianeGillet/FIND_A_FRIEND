@@ -6,7 +6,7 @@
       <div class="container">
 
         <div class="row">
-            <%= simple_form_for @friend do |f| %>
+            <%= simple_form_for @friend, data: {turbo: false} do |f| %>
               <%= f.input :first_name %>
               <%= f.input :last_name %>
               <%= f.input :phone_number %>
