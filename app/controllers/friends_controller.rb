@@ -14,6 +14,11 @@ class FriendsController < ApplicationController
 
   def create
     @friend = Friend.new(friend_params)
+    if @friend.save
+      redirect_to friends_path
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -25,7 +30,7 @@ class FriendsController < ApplicationController
   private
 
   def friend_params
-    params.require(:friend).permit(:first_name, :last_name)
+    params.require(:friend).permit(:first_name, :last_name, :phone_number, :email_address, :category)
   end
 
 end
