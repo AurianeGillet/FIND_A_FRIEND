@@ -6,9 +6,13 @@
 <p><%= @friend.category %></p>
 <p><%= @friend.description %></p> <br>
 
+<button type="button" class="btn btn-outline-secondary btn-small">
 <%= link_to "Delete",
   friend_path(@friend),
   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%> <br>
-    <br>
-<%= link_to "<-Back", friends_path %>
+%>
+</button>
+<br><br>
+<button type="button" class="btn btn-outline-secondary btn-small">
+  <%= link_to "<-Back", friends_path %>
+</button>
