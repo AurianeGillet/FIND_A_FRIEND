@@ -24,13 +24,12 @@ class FriendsController < ApplicationController
   def destroy
     @friend = Friend.find(params[:id])
     @friend.destroy
-    # redirect_to (path to the booking)
+    redirect_to friends_path, status: :see_other
   end
 
   private
 
   def friend_params
-    params.require(:friend).permit(:first_name, :last_name, :phone_number, :email_address, :category)
+    params.require(:friend).permit(:first_name, :last_name, :phone_number, :email_address, :category, :photo, :description, :age, :price)
   end
-
 end

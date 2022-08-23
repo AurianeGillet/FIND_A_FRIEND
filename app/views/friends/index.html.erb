@@ -4,7 +4,9 @@
 
 <ul>
   <% @friends.each do |friend| %>
-    <li><%=link_to friend.first_name, friend_path(friend) %></li>
+    <li><%=link_to friend.first_name, friend_path(friend) %>
+    <%# <%= cl_image_tag friend.photo, height: 300, width: 400, crop: :fill %>
+    </li>
   <% end %>
 </ul>
 
