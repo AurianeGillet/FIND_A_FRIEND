@@ -1,18 +1,64 @@
-<%= @friend.first_name %> <%= @friend.last_name %> <br>
-<p><%= @friend.age %> years old</p>
-<p><%= @friend.price%>€</p>
-<%= cl_image_tag @friend.photo.key, height: 300, width: 400, crop: :fill %> <br> <br>
+  <div class="box">
+    <div id="overlay">
+      <div class="image" style="background-image: url(<%= @friend.photo.present? ? cl_image_path(@friend.photo.key) : 'https://as2.ftcdn.net/v2/jpg/02/08/98/17/1000_F_208981748_9fbrA3Hy2GGajHn4XDtfzVFMzHiXguYg.jpg' %>)">
+        <div class="trick">
 
-<p><%= @friend.category %></p>
-<p><%= @friend.description %></p> <br>
+        </div>
+      </div>
+      <ul class="text"><%= @friend.first_name %> <%= @friend.last_name %></ul>
+      <div class="text1"><%= @friend.category %></div> <br>
+      <div class="text1"><%= @friend.age %> years old</div>
 
-<button type="button" class="btn btn-outline-secondary btn-small">
+
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading " role="tab" id="headingOne">
+      <h4 class="panel-title ">
+        <a class="collapsed" role="button" data-bs-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          <div class="title btn btn-danger btn-outline btn-lg">ABOUT ME</div>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+        <p><%= @friend.description %></p>
+        <p>Price: <%= @friend.price%> €/h</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingThree">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-bs-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          <div class="title btn btn-danger btn-outline btn-lg">BOOK ME</div>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div class="panel-body">
+
+                  <form id="form" class="topBefore">
+
+            <input id="name" type="text" placeholder="NAME">
+            <input id="email" type="text" placeholder="E-MAIL">
+            <input id="date" type="text" placeholder="DATE">
+            <textarea id="message" type="text" placeholder="MESSAGE"></textarea>
+            <input id="submit" type="submit" value="Submit Now!">
+
+          </form>
+      </div>
+    </div>
+  </div>
+  <button type="button" class="btn btn-outline-secondary btn-small">
 <%= link_to "Delete",
   friend_path(@friend),
   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
 %>
 </button>
-<br><br>
+<br>
 <button type="button" class="btn btn-outline-secondary btn-small">
-  <%= link_to "<-Back", friends_path %>
+  <%= link_to "Back", friends_path %>
 </button>
+</div>
