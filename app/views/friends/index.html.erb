@@ -1,14 +1,21 @@
 <div class="container mt-3">
   <h1> All our available friends for you<h1>
 <div>
+<div class = "cards">
+    <% @friends.each do |friend| %>
+    <% @full_name = "#{friend.first_name} #{friend.last_name}" %>
+      <div class="card-friend">
+          <%= cl_image_tag friend.photo.key, crop: :fill, class: "card-friend-img" %>
 
-<ul>
-  <% @friends.each do |friend| %>
-    <li><%=link_to friend.first_name, friend_path(friend) %>
-    <%# <%= cl_image_tag friend.photo, height: 300, width: 400, crop: :fill %>
-    </li>
-  <% end %>
-</ul>
+          <h3><%=link_to @full_name, friend_path(friend), class: "btn-medium" %><h3>
+        <br>
+        <div class = "card-friend-infos">
+          <h2><%= friend.category %></h2>
+          <p><%= friend.price%> €/h</p>
+        </div>
+      </div>
+    <% end %>
+</div>
 
 <button type="button" class="btn btn-outline-secondary btn-small">
   <%= link_to "Create", new_friend_path, style: "text-decoration: none" %>
