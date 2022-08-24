@@ -3,7 +3,7 @@
 
   <div class="row">
     <% @friends.each do |friend| %>
-      <div class="col">
+      <div class="col-4">
         <% @full_name = "#{friend.first_name} #{friend.last_name}" %>
         <div class="card-friend">
           <%= cl_image_tag friend.photo.key, crop: :fill, class: "card-friend-img" %>
