@@ -6,8 +6,9 @@
       <div class="col-4">
         <% @full_name = "#{friend.first_name} #{friend.last_name}" %>
         <div class="card-friend">
+        <% if friend.photo.attached? %>
           <%= cl_image_tag friend.photo.key, crop: :fill, class: "card-friend-img" %>
-
+        <% end %>
           <div>
             <h3><%=link_to @full_name, friend_path(friend), class: "btn-medium" %><h3>
 
