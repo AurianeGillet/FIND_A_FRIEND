@@ -16,6 +16,7 @@ class FriendsController < ApplicationController
   def create
     @friend = Friend.new(friend_params)
     if @friend.save
+      @full_name = "#{:first_name} #{:last_name}"
       redirect_to friends_path
     else
       render :new
