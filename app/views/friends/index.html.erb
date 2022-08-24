@@ -1,22 +1,27 @@
 <div class="container mt-3">
   <h1> All our available friends for you<h1>
-<div>
-<div class = "cards">
+
+  <div class="row">
     <% @friends.each do |friend| %>
-    <% @full_name = "#{friend.first_name} #{friend.last_name}" %>
-      <div class="card-friend">
+      <div class="col">
+        <% @full_name = "#{friend.first_name} #{friend.last_name}" %>
+        <div class="card-friend">
           <%= cl_image_tag friend.photo.key, crop: :fill, class: "card-friend-img" %>
 
-          <h3><%=link_to @full_name, friend_path(friend), class: "btn-medium" %><h3>
-        <br>
-        <div class = "card-friend-infos">
-          <h2><%= friend.category %></h2>
-          <p><%= friend.price%> €/h</p>
+          <div>
+            <h3><%=link_to @full_name, friend_path(friend), class: "btn-medium" %><h3>
+
+            <div class="card-friend-infos">
+              <h2><%= friend.category %></h2>
+              <p><%= friend.price%> €/h</p>
+            </div>
+          </div>
         </div>
       </div>
     <% end %>
-</div>
+  </div>
 
-<button type="button" class="btn btn-outline-secondary btn-small">
-  <%= link_to "Create", new_friend_path, style: "text-decoration: none" %>
-</button>
+  <div class="d-grid gap-2 mt-5">
+    <%= link_to "Create your profile as a friend", new_friend_path, class: "btn btn-success btn-lg"  %>
+  </div>
+</div>
