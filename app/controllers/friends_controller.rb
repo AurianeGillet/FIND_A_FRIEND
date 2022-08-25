@@ -1,10 +1,11 @@
 class FriendsController < ApplicationController
 
   def index
-      if params[:query].present?
+    if params[:query].present?
       @friends = Friend.search_by_first_name_and_category(params[:query])
     else
       @friends = Friend.all
+    end
 
     @markers = @friends.geocoded.map do |friend|
       {
