@@ -7,8 +7,8 @@ class Friend < ApplicationRecord
   has_many :users, through: :bookings
 
   include PgSearch::Model
-  pg_search_scope :search_by_first_name_and_category,
-  against: [ :first_name, :category ],
+  pg_search_scope :search_by_first_name_last_name_and_category,
+  against: [ :first_name, :category, :last_name ],
   using: {
     tsearch: { prefix: true }
   }

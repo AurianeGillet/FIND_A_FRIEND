@@ -1,15 +1,15 @@
 <div class="container mt-3">
-  <h1> Here is all your friendshits <h1>
+  <h1> All your personnal bookings <h1>
 <div>
 
-<%# <ul>
   <% @bookings.each do |booking| %>
-    <%# <li><%=link_to booking., friend_path(friend) %> %>
-    <%# <%= cl_image_tag friend.photo, height: 300, width: 400, crop: :fill %>
-    <%# </li> %>
-  <%# <% end %> %>
-<%# </ul> %> %>
+   <ul>
+    <%#  <li> <%= booking.location %> </li>
+      <li> <%= booking.friend.first_name %> <%= booking.friend.last_name %></li>
+      <li> <%= booking.date %> </li>
+      <li> <%= booking.friend.category %> </li>
+    </ul>
+  <% end %>
 
-<button type="button" class="btn btn-outline-secondary btn-small">
-  <%= link_to "Create", new_friend_path, style: "text-decoration: none" %>
-</button>
+<%# <%= link_to "Go to your booked friend profile", friend_path %>
+<%= link_to "Back to friends", friends_path %>
