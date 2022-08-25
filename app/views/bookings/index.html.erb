@@ -3,13 +3,21 @@
 <div>
 
   <% @bookings.each do |booking| %>
-   <ul>
-    <%#  <li> <%= booking.location %> </li>
-      <li> <%= booking.friend.first_name %> <%= booking.friend.last_name %></li>
-      <li> <%= booking.date %> </li>
-      <li> <%= booking.friend.category %> </li>
-    </ul>
+    <div class="card d-flex position-relative flex-column">
+      <div class='imgContainer'>
+        <%= cl_image_tag booking.friend.photo.key %>
+      </div>
+      <div class="content">
+        <h3> <%= booking.date %> </h3>
+        <h2> <%= booking.friend.first_name %> <%= booking.friend.last_name %> </h2>
+        <p> <%= booking.friend.category %> </p>
+        <p> <%= booking.friend.price %> </p>
+      </div>
+      <button type="button" class="btn btn-danger btn-small">
+        <%= link_to "Delete", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      </button>
+    </div>
   <% end %>
-
-<%# <%= link_to "Go to your booked friend profile", friend_path %>
-<%= link_to "Back to friends", friends_path %>
+<button type="button" class="btn btn-outline-secondary btn-small">
+  <%= link_to "Back to friends", friends_path %>
+</button>
