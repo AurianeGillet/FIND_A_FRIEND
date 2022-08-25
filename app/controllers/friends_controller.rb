@@ -3,7 +3,7 @@ class FriendsController < ApplicationController
   def index
     # @friends = Friend.all
     if params[:query].present?
-      @friends = Friend.search_by_first_name_and_description(params[:query])
+      @friends = Friend.search_by_first_name_and_category(params[:query])
     else
       @friends = Friend.all
     end
