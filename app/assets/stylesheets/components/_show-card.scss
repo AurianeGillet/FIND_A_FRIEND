@@ -97,10 +97,11 @@
   max-width:100%;
 }
 
-#accordion{
-  background-color: transparent;
+.accordion{
+  background-color: white;
   max-width:100%;
-  margin-bottom:200px;
+  margin-bottom:0px;
+
 }
 
 .btn-outline {
@@ -112,7 +113,7 @@
 
 .btn-danger.btn-outline {
   margin-top: 9px;
-  background-color: transparent;
+  background-color: white;
   color: #000;
   border-color: #000;
   padding:auto;
@@ -125,6 +126,14 @@
   max-width:100%;
 }
 
+.btn-outline-secondary {
+  background-color: white;
+}
+
+/* .btn-outline-secondary:hover {
+  background-color: #fd8f10;
+  border-color: black;
+} */
 /*---------    Contact Form    ------------*/
 
 input::-webkit-input-placeholder,
