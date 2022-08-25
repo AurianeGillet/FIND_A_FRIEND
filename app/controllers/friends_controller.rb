@@ -1,7 +1,12 @@
 class FriendsController < ApplicationController
 
   def index
-    @friends = Friend.all
+    # @friends = Friend.all
+    if params[:query].present?
+      @friends = Friend.search_by_first_name_and_category(params[:query])
+    else
+      @friends = Friend.all
+    end
   end
 
   def show
@@ -16,7 +21,7 @@ class FriendsController < ApplicationController
   def create
     @friend = Friend.new(friend_params)
     if @friend.save
-      @full_name = "#{:first_name} #{:last_name}"
+      @full_name = "#{@friend.first_name} #{@friend.last_name}"
       redirect_to friends_path
     else
       render :new
