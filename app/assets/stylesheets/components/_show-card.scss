@@ -28,7 +28,6 @@
   text-align: center;
   width: 200px;
   /* Container's dimensions */
-
   height: 200px;
   -webkit-border-radius: 75%;
   -moz-border-radius: 75%;
@@ -97,10 +96,11 @@
   max-width:100%;
 }
 
-#accordion{
-  background-color: transparent;
+.accordion{
+  background-color: white;
   max-width:100%;
-  margin-bottom:200px;
+  margin-bottom:0px;
+
 }
 
 .btn-outline {
@@ -112,7 +112,7 @@
 
 .btn-danger.btn-outline {
   margin-top: 9px;
-  background-color: transparent;
+  background-color: white;
   color: #000;
   border-color: #000;
   padding:auto;
@@ -125,6 +125,14 @@
   max-width:100%;
 }
 
+.btn-outline-secondary {
+  background-color: white;
+}
+
+/* .btn-outline-secondary:hover {
+  background-color: #fd8f10;
+  border-color: black;
+} */
 /*---------    Contact Form    ------------*/
 
 input::-webkit-input-placeholder,
@@ -257,3 +265,5 @@ textarea:hover {
   color: #fff;
   background-color: #ccc;
 }
+
+.bolded { font-weight: bold; }
