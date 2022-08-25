@@ -4,4 +4,11 @@ class Friend < ApplicationRecord
   validates :category, inclusion: { in: CATEGORIES }
   has_many :bookings, dependent: :destroy
   has_many :users, through: :bookings
+
+  include PgSearch::Model
+  pg_search_scope :search_by_first_name_and_description,
+  against: [ :first_name, :description ],
+  using: {
+    tsearch: { prefix: true }
+  }
 end

@@ -1,6 +1,21 @@
 <div class="container mt-3">
   <h1> All our available friends for you<h1>
 
+  <div class="search">
+    <%= form_with url: friends_path, method: :get, class: "d-flex" do %>
+      <div class="search-input">
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find your friend"
+        %>
+      </div>
+      <div class="submit-button">
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+
   <div class="row">
     <% @friends.each do |friend| %>
       <div class="col-4">
