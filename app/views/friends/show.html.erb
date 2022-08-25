@@ -1,54 +1,56 @@
-<div class="box">
-  <div id="overlay">
-    <div class="image" style="background-image: url(<%= @friend.photo.present? ? cl_image_path(@friend.photo.key) : 'https://as2.ftcdn.net/v2/jpg/02/08/98/17/1000_F_208981748_9fbrA3Hy2GGajHn4XDtfzVFMzHiXguYg.jpg' %>)">
-      <div class="trick">
+<div class="container">
+  <div class="box">
+    <div id="overlay">
+      <div class="image" style="background-image: url(<%= @friend.photo.present? ? cl_image_path(@friend.photo.key) : 'https://as2.ftcdn.net/v2/jpg/02/08/98/17/1000_F_208981748_9fbrA3Hy2GGajHn4XDtfzVFMzHiXguYg.jpg' %>)">
+        <div class="trick">
+        </div>
       </div>
-    </div>
-    <ul class="text-friend-name"><%= @friend.first_name %> <%= @friend.last_name %></ul>
-    <div class="text1"><%= @friend.category %></div> <br>
-      <div class="text1"><%= @friend.age %> years old</div>
-        <div class="panel-group" role="tablist" aria-multiselectable="true">
-          <div class="panel panel-default accordion">
-            <div class="panel-heading " role="tab" id="headingOne">
-              <h4 class="panel-title ">
-                <a class="collapsed" role="button" data-bs-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                  <div class="title btn btn-danger btn-outline btn-lg">ABOUT ME</div>
+      <ul class="text-friend-name"><%= @friend.first_name %> <%= @friend.last_name %></ul>
+      <div class="text1"><%= @friend.category %></div> <br>
+        <div class="text1"><%= @friend.age %> years old</div>
+          <div class="panel-group" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default accordion">
+              <div class="panel-heading " role="tab" id="headingOne">
+                <h4 class="panel-title ">
+                  <a class="collapsed" role="button" data-bs-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    <div class="title btn btn-danger btn-outline btn-lg">About me</div>
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="panel-body">
+                  <p><span class="bolded">Description: </span><%= @friend.description %></p>
+                  <p><span class="bolded">Price: </span><%= @friend.price%> <span class="bolded">€/h</span></p>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default accordion">
+            <div class="panel-heading" role="tab" id="headingThree">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button" data-bs-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  <div class="title btn btn-danger btn-outline btn-lg">BOOK ME</div>
                 </a>
               </h4>
             </div>
-            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
               <div class="panel-body">
-                <p><span class="bolded">Description: </span><%= @friend.description %></p>
-                <p><span class="bolded">Price: </span><%= @friend.price%> <span class="bolded">€/h</span></p>
+                <%= simple_form_for [@friend, @booking], data: {turbo: false} do |f| %>
+                  <%= f.input :date, class:"form-control" %>
+                  <%= f.input :message, class:"form-control" %>
+                  <%= f.submit class: 'btn btn-primary' %>
+                <% end %>
               </div>
             </div>
           </div>
-          <div class="panel panel-default accordion">
-          <div class="panel-heading" role="tab" id="headingThree">
-            <h4 class="panel-title">
-              <a class="collapsed" role="button" data-bs-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                <div class="title btn btn-danger btn-outline btn-lg">BOOK ME</div>
-              </a>
-            </h4>
-          </div>
-          <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-            <div class="panel-body">
-              <%= simple_form_for [@friend, @booking], data: {turbo: false} do |f| %>
-                <%= f.input :date, class:"form-control" %>
-                <%= f.input :message, class:"form-control" %>
-                <%= f.submit class: 'btn btn-primary' %>
-              <% end %>
-            </div>
-          </div>
         </div>
-      </div>
-      <div class="panel-group" role="tablist" aria-multiselectable="true">
-        <button type="button" class="btn btn-outline-secondary btn-small">
-          <%= link_to "Delete", friend_path(@friend), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-        </button>
-          <br>
-        <button type="button" class="btn btn-outline-secondary btn-small">
-          <%= link_to "Back", friends_path %>
-        </button>
+        <div class="panel-group" role="tablist" aria-multiselectable="true">
+          <button type="button" class="btn btn-outline-secondary btn-small">
+            <%= link_to "Delete", friend_path(@friend), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+          </button>
+            <br>
+          <button type="button" class="btn btn-outline-secondary btn-small">
+            <%= link_to "Back", friends_path %>
+          </button>
+    </div>
   </div>
 </div>

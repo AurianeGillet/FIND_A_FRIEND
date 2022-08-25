@@ -9,6 +9,18 @@
   font-weight: bold;
   padding: 10px 30px;
   margin: 5px;
+  &:hover{
+    background-color: $dark-orange;
+    color: $white;
+  }
+ }
+ .logo-orange {
+  background-color: $orange;
+  border-radius: 40px;
+  color: $white;
+  font-weight: bold;
+  padding: 10px 30px;
+  margin: 5px;
  }
 
  .small-font {
@@ -26,11 +38,10 @@
   margin: 5px;
   text-align: center;
   font-size: 14px;
- }
-
- .button-rounded-green:hover {
-  background-color: $dark-green-hover;
-  color: $white;
+  &:hover {
+    background-color: $dark-green-hover;
+    color: $white;
+   }
  }
 
  .btn-medium {
@@ -40,12 +51,9 @@
   border-radius: 50px;
   font-weight: lighter;
   opacity: 0.6;
+  &:hover {
+    opacity: 1;
+    text-decoration: none;
+    color: #999999;
+  }
 }
-
-.btn-medium:hover {
-  opacity: 1;
-  text-decoration: none;
-  color: #999999;
-}
-
-
