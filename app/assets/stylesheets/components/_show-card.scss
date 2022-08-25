@@ -1,5 +1,5 @@
 .box {
-  background: url('https://images.unsplash.com/photo-1420496368970-d83b063b5b48?fit=crop&fm=jpg&h=700&q=80&w=1225') no-repeat center center;
+  // background: url('https://images.unsplash.com/photo-1420496368970-d83b063b5b48?fit=crop&fm=jpg&h=700&q=80&w=1225') no-repeat center center;
   background-size: cover;
   background-position: 30%;
   background-attachment: fixed;
@@ -303,4 +303,41 @@ textarea:hover {
 
 .customDatePickerWidth {
   width: inherit;
+}
+
+.btn:hover{
+  color: white;
+}
+
+.btn-outline {
+  color: inherit;
+  transition: all 1.4s;
+  background-color: transparent;
+}
+
+.btn-danger.btn-outline {
+  margin-top: 9px;
+  background-color: transparent;
+  color: #000;
+  border-color: #000;
+  padding:auto;
+  padding:10px 0px 10px 0px;
+  margin: 1px 5px 1px 0px;
+  width: 100%;
+  text-align:center;
+  font-family: raleway;
+  font-weight: 300;
+  max-width:100%;
+}
+
+.btn-danger {
+  color: $white;
+  background-color: $white;
+  border-color: $white;
+}
+
+.btn-danger:hover {
+  color: #fff;
+  background-color: $orange;
+  border-color: black;
 }

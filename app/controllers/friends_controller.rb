@@ -1,11 +1,17 @@
 class FriendsController < ApplicationController
 
   def index
-    # @friends = Friend.all
-    if params[:query].present?
+      if params[:query].present?
       @friends = Friend.search_by_first_name_and_category(params[:query])
     else
       @friends = Friend.all
+
+    @markers = @friends.geocoded.map do |friend|
+      {
+        lat: friend.latitude,
+        lng: friend.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {friend: friend})
+      }
     end
   end
 
@@ -37,6 +43,6 @@ class FriendsController < ApplicationController
   private
 
   def friend_params
-    params.require(:friend).permit(:first_name, :last_name, :phone_number, :email_address, :category, :description, :age, :price, :photo)
+    params.require(:friend).permit(:first_name, :last_name, :phone_number, :email_address, :category, :description, :age, :price, :photo, :address)
   end
 end

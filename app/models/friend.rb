@@ -5,6 +5,9 @@ class Friend < ApplicationRecord
   validates :photo, presence: true
   has_many :bookings, dependent: :destroy
   has_many :users, through: :bookings
+  
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 
   include PgSearch::Model
   pg_search_scope :search_by_first_name_and_category,
