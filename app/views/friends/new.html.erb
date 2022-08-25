@@ -10,7 +10,7 @@
               <%= f.input :first_name %>
               <%= f.input :last_name %>
               <%= f.input :age, collection: 18..100 %>
-              <%= f.input :price, collection: 5..100 %>
+              <%= f.input :price, as: :integer %>
               <%= f.input :phone_number %>
               <%= f.input :email_address %>
               <%= f.input :category, collection: Friend::CATEGORIES %>
