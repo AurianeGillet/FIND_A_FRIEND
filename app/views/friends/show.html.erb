@@ -1,3 +1,8 @@
+ <head>
+  <%# <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"> %>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
+</head>
+
   <div class="box">
     <div id="overlay">
       <div class="image" style="background-image: url(<%= @friend.photo.present? ? cl_image_path(@friend.photo.key) : 'https://as2.ftcdn.net/v2/jpg/02/08/98/17/1000_F_208981748_9fbrA3Hy2GGajHn4XDtfzVFMzHiXguYg.jpg' %>)">
@@ -71,4 +76,3 @@
             <%# <%= f.submit class:"btn btn-flat" %>
           <%# <% end %>
 <%# </div> %>
-
