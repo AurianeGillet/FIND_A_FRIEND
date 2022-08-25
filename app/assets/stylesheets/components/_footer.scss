@@ -3,7 +3,7 @@
   padding: 5px;
   background-color: $orange;
   margin-top: 20px;
-  position: fixed;
+  // position: fixed;
   width: 100%;
   bottom: 0;
 }
@@ -32,6 +32,5 @@
 }
 
 .page-content {
-  min-height: calc(100vh - 151px);
-  /* margin-bottom: 200px; */
+  min-height: calc(100vh - 260px);
 }
