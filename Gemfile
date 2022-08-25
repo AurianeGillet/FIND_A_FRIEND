@@ -80,4 +80,6 @@ group :test do
 end
 
 gem "cloudinary"
+gem "geocoder"
 gem "pg_search"
+

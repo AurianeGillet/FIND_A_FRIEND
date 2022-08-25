@@ -66,6 +66,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_25_140916) do
     t.text "description"
     t.integer "age"
     t.float "price"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "address"
   end
 
   create_table "users", force: :cascade do |t|
