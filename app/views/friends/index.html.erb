@@ -6,22 +6,24 @@
       <div class="col-4">
         <% @full_name = "#{friend.first_name} #{friend.last_name}" %>
         <div class="card-friend">
-          <%= cl_image_tag friend.photo.key, crop: :fill, class: "card-friend-img" %>
-
-          <div>
-            <h3><%=link_to @full_name, friend_path(friend), class: "btn-medium" %><h3>
-
-            <div class="card-friend-infos">
-              <h2><%= friend.category %></h2>
-              <p><%= friend.price%> €/h</p>
+          <%= link_to friend_path(friend), class: "link" do %>
+            <% if friend.photo.attached? %>
+              <%= cl_image_tag friend.photo.key, crop: :fill, class: "card-friend-img" %>
+            <% end %>
+            <div>
+              <div class="card-friend-infos">
+                <h2><%= @full_name %></h2>
+                <h3><%= friend.category %></h3>
+                <p><%= friend.price%> €/h</p>
+              </div>
             </div>
-          </div>
+          <% end %>
         </div>
       </div>
     <% end %>
   </div>
 
   <div class="d-grid gap-2 mt-5">
-    <%= link_to "Create your profile as a friend", new_friend_path, class: "btn btn-success btn-lg"  %>
+    <%= link_to "Create your profile as a friend", new_friend_path, class: "button-rounded-green"  %>
   </div>
 </div>
