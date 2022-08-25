@@ -1,6 +1,5 @@
 .btn-success {
-  color: #CEE5D0;
-
+  color: $white;
 }
 
 .button-rounded-orange {
@@ -11,3 +10,77 @@
   padding: 10px 30px;
   margin: 5px;
  }
+
+ .small-font {
+  font-weight: lighter;
+  padding: 5px;
+  margin: 5px;
+ }
+
+ .button-rounded-green {
+  background-color: $dark-green;
+  border-radius: 40px;
+  color: $white;
+  font-weight: bold;
+  padding: 10px 30px;
+  margin: 5px;
+  text-align: center;
+  font-size: 14px;
+ }
+
+ .button-rounded-green:hover {
+  background-color: $dark-green-hover;
+  color: $white;
+ }
+
+ .btn-medium {
+  color: #999999;
+  border: 1px solid #999999;
+  padding: 8px 8px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+}
+
+.btn-medium:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: #999999;
+}
+
+.btn:hover{
+  color: white;
+}
+
+.btn-outline {
+  color: inherit;
+  transition: all 1.4s;
+  background-color: transparent;
+}
+
+.btn-danger.btn-outline {
+  margin-top: 9px;
+  background-color: transparent;
+  color: #000;
+  border-color: #000;
+  padding:auto;
+  padding:10px 0px 10px 0px;
+  margin: 1px 5px 1px 0px;
+  width: 100%;
+  text-align:center;
+  font-family: raleway;
+  font-weight: 300;
+  max-width:100%;
+}
+
+.btn-danger {
+  color: #fff;
+  background-color: white;
+  border-color: white;
+}
+
+.btn-danger:hover {
+  color: #fff;
+  background-color: #fd8f10;
+  border-color: black;
+}

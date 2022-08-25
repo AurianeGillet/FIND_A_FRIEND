@@ -103,28 +103,6 @@
   margin-bottom:200px;
 }
 
-.btn-outline {
-  color: inherit;
-  transition: all 1.4s;
-  background-color: transparent;
-}
-/* button CSS */
-
-.btn-danger.btn-outline {
-  margin-top: 9px;
-  background-color: transparent;
-  color: #000;
-  border-color: #000;
-  padding:auto;
-  padding:10px 0px 10px 0px;
-  margin: 1px 5px 1px 0px;
-  width: 100%;
-  text-align:center;
-  font-family: raleway;
-  font-weight: 300;
-  max-width:100%;
-}
-
 /*---------    Contact Form    ------------*/
 
 input::-webkit-input-placeholder,
@@ -256,16 +234,4 @@ textarea:hover {
 #submit:hover {
   color: #fff;
   background-color: #ccc;
-}
-
-.btn-danger {
-  color: #fff;
-  background-color: white;
-  border-color: white;
-}
-
-.btn-danger:hover {
-  color: #fff;
-  background-color: #fd8f10;
-  border-color: black;
 }
