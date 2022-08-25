@@ -12,7 +12,12 @@ class BookingsController < ApplicationController
     @friend = Friend.find(params[:friend_id])
     @booking = Booking.new(booking_params)
     @booking.friend_id = @friend.id
-    @booking.user = current.user
+    @booking.user = current_user
+    if @booking.save
+      redirect_to friends_path
+    else
+      render "friends/show"
+    end
     # if statement to save
   end
 
