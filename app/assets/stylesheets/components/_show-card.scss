@@ -97,12 +97,43 @@
   max-width:100%;
 }
 
-#accordion{
-  background-color: transparent;
+.accordion{
+  background-color: white;
   max-width:100%;
-  margin-bottom:200px;
+  margin-bottom:0px;
+
 }
 
+.btn-outline {
+  color: inherit;
+  transition: all 1.4s;
+  background-color: transparent;
+}
+/* button CSS */
+
+.btn-danger.btn-outline {
+  margin-top: 9px;
+  background-color: white;
+  color: #000;
+  border-color: #000;
+  padding:auto;
+  padding:10px 0px 10px 0px;
+  margin: 1px 5px 1px 0px;
+  width: 100%;
+  text-align:center;
+  font-family: raleway;
+  font-weight: 300;
+  max-width:100%;
+}
+
+.btn-outline-secondary {
+  background-color: white;
+}
+
+/* .btn-outline-secondary:hover {
+  background-color: #fd8f10;
+  border-color: black;
+} */
 /*---------    Contact Form    ------------*/
 
 input::-webkit-input-placeholder,
