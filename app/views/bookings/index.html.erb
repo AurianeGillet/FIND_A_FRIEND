@@ -19,7 +19,7 @@
         <h3> <%= booking.date %> </h3>
         <h2> <%= booking.friend.first_name %> <%= booking.friend.last_name %> </h2>
         <p> <%= booking.friend.category %> </p>
-        <p> <%= booking.friend.price %> </p>
+        <p> <%= booking.friend.price %> €</p>
       </div>
       <button type="button" class="btn btn-danger btn-small">
         <%= link_to "Cancel the booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
