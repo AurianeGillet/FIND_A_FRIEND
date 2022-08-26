@@ -7,11 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require "open-uri"
 
-file = URI.open("https://thumbs.dreamstime.com/b/rock-guitarist-19113213.jpg")
+file.miguel = URI.open("https://thumbs.dreamstime.com/b/rock-guitarist-19113213.jpg")
 miguel = Friend.new(first_name: "Miguel", last_name: "Figueiredo", phone_number: "+3513456367643", email_address: "guitarist4life@gmail.com", category: "Drunk Friend", description: "Hey there", age: 28, price: 6500, address: "Lisbon")
-miguel.photo.attach(io: file, filename: "miguel.png", content_type: "image/png")
-if miguel.save
-  puts "friend created"
-else
-  puts miguel.errors
-end
+miguel.photo.attach(io: file.miguel, filename: "miguel.png", content_type: "image/png")
+
