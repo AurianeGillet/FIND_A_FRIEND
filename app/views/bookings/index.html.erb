@@ -14,7 +14,7 @@
         <p> <%= booking.friend.price %> </p>
       </div>
       <button type="button" class="btn btn-danger btn-small">
-        <%= link_to "Delete", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        <%= link_to "Cancel the booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
       </button>
     </div>
   <% end %>
