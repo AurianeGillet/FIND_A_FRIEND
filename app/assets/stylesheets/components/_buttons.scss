@@ -41,6 +41,9 @@
   &:hover {
     background-color: $dark-green-hover;
     color: $white;
+  }
+  input {
+    border: 1px solid $dark-green;
    }
  }
 
