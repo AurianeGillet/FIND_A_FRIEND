@@ -1,5 +1,6 @@
 <div class="panel panel-default">
-    <div class="container mt-3">
+    <div class="create-friend-container">
+
         Create your friend profile
     </div>
     <div class="panel-body">
@@ -18,7 +19,7 @@
               <%= f.input :description, as: :text %>
               <%= f.input :address %>
 
-              <%= f.submit class: 'btn btn-primary' %>
+              <%= f.button :button, class: 'button-rounded-orange' %>
             <% end %>
 
             <%= link_to "<-Back", friends_path %>
