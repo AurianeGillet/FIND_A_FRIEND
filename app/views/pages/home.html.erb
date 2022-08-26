@@ -1,28 +1,32 @@
 <div class="banner">
-    <div class="container">
-      <div class="transparent">
-        <h1>There is nothing that money cannot buy!</h1>
-        <p>Change your life and meet your new friends.</p>
-          <%= link_to "See our friends catalog", friends_path, class: "button-rounded-orange" %>
-      </div>
+  <div class="container">
+    <div class="transparent">
+      <h1>There is nothing that money cannot buy!</h1>
+      <p>Change your life and meet your new friends.</p>
+      <%= link_to "See our friends catalog", friends_path, class: "button-rounded-orange" %>
     </div>
   </div>
+</div>
+
   <!-- code a "What are we here for?" section -->
-  <div class="container">
-  <br>
-    <h2 class="text-center">What are we here for?</h2>
-    <br>
-    <div class="cards">
+<div class="container">
+  <h2 class="text-center mt-4 mb-4">What are we here for?</h2>
+  <div class="row">
+    <div class="col-4">
       <div class="card">
         <%= image_tag "friends_chilling.jpg" %>
         <h3>Don't be lonely</h3>
         <p>You cannot stand other people happiness because you are always alone? Don't worry, we are here for you! You will find a buddy for the time that you want to do the activity</p>
       </div>
+    </div>
+    <div class="col-4">
       <div class="card">
         <%= image_tag "friends_drinking.jpg" %>
         <h3>Life is too short</h3>
         <p>If there is something that COVID taught us, is that life is short. Why should you lose time motivating other to do the activities you want with you? </p>
       </div>
+    </div>
+    <div class="col-4">
       <div class="card">
         <%= image_tag "friends_heart.jpg" %>
         <h3>Buy short-term friends</h3>
@@ -30,3 +34,4 @@
       </div>
     </div>
   </div>
+</div>

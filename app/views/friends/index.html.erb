@@ -1,50 +1,53 @@
-<div class="container mt-3">
-  <h1> All our available friends for you<h1>
-
-  <div class="search">
-    <%= form_with url: friends_path, method: :get, class: "d-flex" do %>
-      <div class="search-input">
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Find your friend"
-        %>
-      </div>
-      <div class="submit-button">
-        <%= submit_tag "Search", class: "btn-search btn-primary" %>
-      </div>
-    <% end %>
-  </div>
-
+<div class="container-fluid mt-3">
   <div class="row">
-    <% @friends.each do |friend| %>
-      <div class="col-4">
-        <% @full_name = "#{friend.first_name} #{friend.last_name}" %>
-        <div class="card-friend">
-          <%= link_to friend_path(friend), class: "link" do %>
-            <% if friend.photo.attached? %>
-              <%= cl_image_tag friend.photo.key, crop: :fill, class: "card-friend-img" %>
-            <% end %>
+    <div class="col-8">
+      <h1> All our available friends for you<h1>
+      <div class="nav-search">
+        <div class="search">
+          <%= form_with url: friends_path, method: :get, class: "d-flex" do %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Look for a friend"
+            %>
             <div>
-              <div class="card-friend-infos">
-                <h2><%= @full_name %></h2>
-                <h3><%= friend.category %></h3>
-                <p><%= friend.price%> €/h</p>
-              </div>
+              <%= submit_tag "Search", class: "button-rounded-green" %>
             </div>
           <% end %>
         </div>
+        <div>
+          <%= link_to "Become a friend!", new_friend_path, class: "button-rounded-green"  %>
+        </div>
       </div>
-    <% end %>
-  </div>
 
-  <div class="d-grid gap-2 mt-5">
-    <%= link_to "Create your profile as a friend", new_friend_path, class: "button-rounded-green"  %>
+      <div class="cards mt-3">
+        <% @friends.each do |friend| %>
+            <% @full_name = "#{friend.first_name} #{friend.last_name}" %>
+            <div class="card-friend">
+              <%= link_to friend_path(friend), class: "link" do %>
+                <% if friend.photo.attached? %>
+                  <%= cl_image_tag friend.photo.key, crop: :fill, class: "card-friend-img" %>
+                <% end %>
+                <div>
+                  <div class="card-friend-infos">
+                    <h2><%= @full_name %></h2>
+                    <h3><%= friend.category %></h3>
+                    <p><%= friend.price%> €/h</p>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="maps" id="map">
+        <div style="width: 100%; height: 100vh;"
+          data-controller="map"
+          data-map-markers-value="<%= @markers.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-
-<div style="width: 100%; height: 600px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>

@@ -1,8 +1,9 @@
-// .cards {
-//   display: grid;
-//   grid-template-columns: 1fr 1fr;
-//   grid-gap: 16px;
-// }
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+  flex-grow: 1;
+}
 
 .card-friend {
   overflow: hidden;
@@ -66,4 +67,14 @@
 
 .card-friend .card-friend-infos {
   padding: 10px;
+}
+
+.nav-search {
+  display: flex;
+}
+
+#map {
+  height: 100vh;
+  position: sticky;
+  top: 0;
 }
