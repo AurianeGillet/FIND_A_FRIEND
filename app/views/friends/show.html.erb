@@ -6,10 +6,15 @@
         </div>
       </div>
       <ul class="text-friend-name"><%= @friend.first_name %> <%= @friend.last_name %></ul>
-      <div class="text1"><%= @friend.category %></div> <br>
-        <div class="text1"><%= @friend.age %> years old</div>
+      <div class="text1">
+        <%= @friend.category %>
+      </div>
+      <br>
+      <div class="text1">
+        <%= @friend.age %> years old
+      </div>
         <%# About me %>
-          <div class="panel-group" role="tablist" aria-multiselectable="true">
+<div class="panel-group" role="tablist" aria-multiselectable="true">
             <div class="panel panel-default accordion">
               <div class="panel-heading " role="tab" id="headingOne">
                 <h4 class="panel-title ">
@@ -26,7 +31,6 @@
               </div>
             </div>
               <%# Review %>
-
               <%# Book me %>
             <div class="panel panel-default accordion">
             <div class="panel-heading" role="tab" id="headingThree">
@@ -41,17 +45,18 @@
                 <%= simple_form_for [@friend, @booking], data: {turbo: false} do |f| %>
                   <%= f.input :date, class:"form-control" %>
                   <%= f.input :message, class:"form-control" %>
-                  <%= f.submit class: 'btn btn-primary' %>
+                  <div class="text-center">
+                    <%= f.button :button, class: 'button-rounded-orange ' %>
+                  </div>
                 <% end %>
               </div>
             </div>
           </div>
         </div>
-        <div class="panel-group" role="tablist" aria-multiselectable="true">
+        <div class="panel-group-buttons" role="tablist" aria-multiselectable="true">
           <button type="button" class="button-rounded-orange">
             <%= link_to "Delete", friend_path(@friend), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
           </button>
-            <br>
           <button type="button" class="button-rounded-orange">
             <%= link_to "Back", friends_path %>
           </button>

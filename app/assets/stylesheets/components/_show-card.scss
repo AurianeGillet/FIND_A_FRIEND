@@ -80,6 +80,17 @@
   margin:auto;
   /*margin:50px 400px 50px 400px;*/
   max-width:100%;
+  // display: flex;
+}
+
+.panel-group-buttons{
+  width:350 px;
+  margin:auto;
+  /*margin:50px 400px 50px 400px;*/
+  max-width:100%;
+  justify-content: center;
+  align-content:center;
+  display:flex;
 }
 
 .panel-heading{
@@ -170,27 +181,27 @@ textarea:hover:focus::-moz-placeholder {
 
 input:hover::placeholder,
 textarea:hover::placeholder {
-  color: $orange;
+  color: $white;
   font-size: 15px;
   // font-family: raleway;
 }
 
 input:hover:focus::placeholder,
 textarea:hover:focus::placeholder {
-  color: $orange;
+  color: $white;
   // font-family: raleway;
 }
 
 input:hover::placeholder,
 textarea:hover::placeholder {
-  color: $orange;
+  color: $white;
   font-size: 15px;
   // font-family: raleway;
 }
 
 input:hover:focus::-ms-placeholder,
 textarea:hover::focus:-ms-placeholder {
-  color: $orange;
+  color: $white;
   // font-family: raleway;
 }
 
