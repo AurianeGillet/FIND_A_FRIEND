@@ -14,12 +14,12 @@ miguel = Friend.new(first_name: "Miguel", last_name: "Figueiredo", phone_number:
 miguel.photo.attach(io: file, filename: "miguel.png", content_type: "image/png")
 miguel.save
 
-file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/MansonB33920_8-14-17_%28cropped%29.jpg/220px-MansonB33920_8-14-17_%28cropped%29.jpg")
+file = URI.open("https://imagens.brasil.elpais.com/resizer/zw__3Lc-X1i4jwzYfdUcsc6447k=/414x0/arc-anglerfish-eu-central-1-prod-prisa.s3.amazonaws.com/public/HQCV5NNLILMLQI5ONKEGDEW35I.jpg")
 charles = Friend.new(first_name: "Charles", last_name: "Manson", phone_number: "+3513345678", email_address: "cm@gmail.com", category: "Old Soul Friend", description: "Hey there, I'm Charles if you need someone to hide a deadbody, call me !", age: 83, price: 200, address: "Los Angeles")
 charles.photo.attach(io: file, filename: "manson.png", content_type: "image/png")
 charles.save
 
-file = URI.open("https://i.dailymail.co.uk/1s/2020/08/10/18/31787024-8612749-Defined_Cristiano_Ronaldo_showed_his_insane_washboard_abs_in_wat-a-43_1597082323339.jpg")
+file = URI.open("https://i.dailymail.co.uk/1s/2019/06/25/14/15229836-0-image-a-134_1561469680972.jpg")
 cristiano = Friend.new(first_name: "Cristiano", last_name: "Ronaldo", phone_number: "+35137777", email_address: "cr7@gmail.com", category: "Boat Friend", description: "Hey there, I'm Cristiano Ronaldo and i have few boats. You don't need to know anything else", age: 37, price: 777777, address: "Sir Matt Busby Way, Old Trafford, Stretford, Manchester M16 0RA, Royaume-Uni")
 cristiano.photo.attach(io: file, filename: "cristiano.png", content_type: "image/png")
 cristiano.save
@@ -28,12 +28,12 @@ file = URI.open("https://sm.ign.com/ign_br/screenshot/default/jack-sparrow-pirat
 jack = Friend.new(first_name: "Jack", last_name: "Sparrow", phone_number: "+3510000001", email_address: "JS@gmail.com", category: "Party Animal Friend", description: "Hey there, I'm Jack Sparrow. ready for partying ?", age: 46, price: 55, address: "La Havane")
 jack.photo.attach(io: file, filename: "jack.png", content_type: "image/png")
 
-file = URI.open("https://c1.wallpaperflare.com/preview/59/334/402/girl-beer-people-woman.jpg")
+file = URI.open("https://resources.stuff.co.nz/content/dam/images/1/0/4/r/d/y/image.related.StuffLandscapeSixteenByNine.1420x800.15l3ut.png/1455229790298.jpg")
 elisa = Friend.new(first_name: "Elisa", last_name: "Daniels", phone_number: "+3555666777", email_address: "ed@gmail.com", category: "Drunk Friend", description: "Hey there, do you like drinking and not solving any of your problems ? call me !", age: 27, price: 26, address: "Bruxelles")
 elisa.photo.attach(io: file, filename: "elisa.jpg", content_type: "image/jpg")
 elisa.save
 
-file = URI.open("https://i.pinimg.com/736x/46/28/88/462888ed433f4f6da20f3da981deb4ab.jpg")
+file = URI.open("https://static3.srcdn.com/wordpress/wp-content/uploads/2018/11/Dobby-the-House-Elf.jpg")
 dobby = Friend.new(first_name: "Dobby", last_name: "Malfoy", phone_number: "+330000000", email_address: "dobby@gmail.com", category: "Shy Friend", description: "Hey there, if you buy me a socket I belong to you. ", age: 22, price: 10, address: "London")
 dobby.photo.attach(io: file, filename: "dobby.png", content_type: "image/png")
 dobby.save
