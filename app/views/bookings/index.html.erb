@@ -35,10 +35,10 @@
         <%= cl_image_tag booking.friend.photo.key %>
       </div>
       <div class="content">
-        <h3> <%= booking.date %> </h3>
-        <h2> <%= booking.friend.first_name %> <%= booking.friend.last_name %> </h2>
+        <h3> <%= booking.friend.first_name %> <%= booking.friend.last_name %> </h3>
         <p> <%= booking.friend.category %> </p>
         <p> <%= booking.friend.price %> €</p>
+        <h2> <%= booking.date.strftime('%d/%m/%Y') %> </h2>
       </div>
       <button type="button" class="button-rounded-green">
         <%= link_to "Cancel the booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
