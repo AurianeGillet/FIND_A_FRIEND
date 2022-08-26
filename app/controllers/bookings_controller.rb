@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
     @booking.friend_id = @friend.id
     @booking.user = current_user
     if @booking.save
-      redirect_to friends_path
+      redirect_to bookings_path
     else
       render "friends/show"
     end
