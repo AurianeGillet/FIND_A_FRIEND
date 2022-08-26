@@ -10,14 +10,10 @@
               class: "form-control",
               placeholder: "Look for a friend"
             %>
-            <div>
-              <%= submit_tag "Search", class: "button-rounded-green line-height-initial border-none" %>
-            </div>
+            <%= button_tag "Search", class: "button-rounded-green line-height-initial border-none" %>
           <% end %>
         </div>
-        <div>
           <%= link_to "Become a friend!", new_friend_path, class: "button-rounded-green"  %>
-        </div>
       </div>
 
       <div class="cards mt-3">
