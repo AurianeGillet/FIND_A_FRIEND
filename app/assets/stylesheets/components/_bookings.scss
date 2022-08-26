@@ -7,3 +7,21 @@ p {
   font-size: 9px;
   color: rgb(31, 31, 31);
 }
+
+.cards-booking {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.line-seperate {
+  color: $orange;
+  height: 10px;
+  border-top: 10px solid $orange;
+  border-radius: 8px;
+}
+
+.top-title-and-button {
+  display: flex;
+  justify-content: space-between;
+}

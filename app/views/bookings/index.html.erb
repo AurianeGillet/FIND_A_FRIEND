@@ -1,6 +1,14 @@
 <div class="container mt-3">
-  <h1> All your personnal bookings <h1>
-<div>
+
+  <div class="top-title-and-button">
+    <h1> All your personnal bookings <h1>
+      <button type="button" class="button-rounded-green">
+        <%= link_to "Back to friends", friends_path %>
+      </button>
+  </div>
+
+    <hr class="line-seperate">
+  <div class="cards-booking">
 
   <% @bookings.each do |booking| %>
     <div class="card d-flex position-relative flex-column">
@@ -17,7 +25,9 @@
         <%= link_to "Delete", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
       </button>
     </div>
-  <% end %>
-<button type="button" class="btn btn-outline-secondary btn-small">
-  <%= link_to "Back to friends", friends_path %>
-</button>
+      <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
