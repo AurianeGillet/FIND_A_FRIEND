@@ -1,7 +1,11 @@
 class BookingsController < ApplicationController
 
   def index
-    @bookings = Booking.where(user: current_user)
+    if params.dig(:search, :begin_date).present? && params.dig(:search, :end_date).present?
+      @bookings = Booking.where(user: current_user, date: params.dig(:search,:begin_date)..params.dig(:search,:end_date))
+    else
+      @bookings = Booking.where(user: current_user)
+    end
   end
 
   def show
