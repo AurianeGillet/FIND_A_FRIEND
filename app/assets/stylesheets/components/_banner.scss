@@ -49,3 +49,17 @@ h1 {
 .text-center {
   text-align: center;
 }
+
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:900');
+
+.create-friend-container {
+  display: flex;
+  justify-content: center;
+    fill: #35322a;
+    filter: url('#money');
+    font-family: 'Poppins', serif;
+    font-size: 60px;
+    font-weight: 900;
+    text-shadow: 2px 2px 2px #35322a;
+
+  }
